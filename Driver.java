@@ -5,10 +5,10 @@ public class Driver {
 	int[] b = {0,1,2,0};
 	int[] c = {0,1,1,3,2};
 	int[] d = {};
-	Sorts.selectionsort(d);
-	Sorts.selectionsort(a);
-	Sorts.selectionsort(b);
-	Sorts.selectionsort(c);
+	Sorts.selectionSort(d);
+	Sorts.selectionSort(a);
+	Sorts.selectionSort(b);
+	Sorts.selectionSort(c);
       	System.out.println(Arrays.toString(a) + "\n" + Arrays.toString(b) + "\n" + Arrays.toString(c) + "\n" + Arrays.toString(d));
     }
 }

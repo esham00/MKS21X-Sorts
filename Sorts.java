@@ -1,5 +1,5 @@
 public class Sorts {
-    public static void selectionsort(int [] ary) {
+    public static void selectionSort(int [] ary) {
 	for (int i = 0; i < ary.length; i++) {
 	    int min = ary[i];
 	    int index = i;

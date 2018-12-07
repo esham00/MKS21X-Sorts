@@ -13,4 +13,17 @@ public class Sorts {
 	    ary[i] = min;
 	}
     }
+    public static void bubbleSort(int[] data) {
+	for(int i = 0; i < data.length-1; i++) {
+	    for (int j = 0; j < data.length-i; j++) {
+		if (data[i] > data[i+1]) {
+		    int old = data[i];
+		    data[i] = data[i+1];
+		    data[i+1] = old;
+		    System.out.println("larger: " + old);
+		    System.out.println("smaller: " + data[i]);
+		}
+	    }
+	}
+    }
 }

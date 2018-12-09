@@ -1,28 +1,36 @@
 public class Sorts {
+    //Sort by choosing the smallest integer and moving it to the front
     public static void selectionSort(int [] ary) {
 	for (int i = 0; i < ary.length; i++) {
 	    int min = ary[i];
 	    int index = i;
+	    //finding the smallest integer
 	    for (int j = i; j < ary.length; j++) {
 		if (ary [j] < min) {
 		    min = ary[j];
 		    index = j;
 		}
 	    }
+	    //moving it to the front
 	    ary[index] = ary[i];
 	    ary[i] = min;
 	}
     }
+    //Sort by comparing the integer with all the integers in front of it and swapping indices if they are smaller
     public static void bubbleSort(int[] data) {
-	for(int i = 0; i < data.length-1; i++) {
-	    for (int j = 0; j < data.length-i; j++) {
-		if (data[i] > data[i+1]) {
-		    int old = data[i];
-		    data[i] = data[i+1];
-		    data[i+1] = old;
-		    System.out.println("larger: " + old);
-		    System.out.println("smaller: " + data[i]);
+	for(int i = 0; i < data.length; i++) {
+	    //choosing the first index
+	    int current = data[i];
+	    //looping through to see if the current int is smaller than the int after it 
+	    for (int j = 0; j < data.length-i-1; j++) {
+		//if the current int is smaller than the int after it swap places
+		if (current > data[j+1]) {
+		    int greater  = current;
+		    data[j] = data[j+1];
+		    data[j+1] = greater;
 		}
+		//then check the next value
+		current = data[j+1];
 	    }
 	}
     }

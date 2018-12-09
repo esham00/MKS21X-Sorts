@@ -4,12 +4,13 @@ public class Driver {
 	if (args.length > 0) {
 	    Random num = new Random();
 	    for(int i = 0; i < Integer.parseInt(args[0]); i++) {
-		int[] ary =  new int[5];
+		int[] ary =  new int[10];
 		for (int j = 0; j < ary.length; j++) {
 		    ary[j] = num.nextInt()%10;
 		}
-		Sorts.bubbleSort(ary);
-		System.out.println(Arrays.toString(ary));
+		//System.out.println(Arrays.toString(ary));
+		 Sorts.bubbleSort(ary);
+		// System.out.println(Arrays.toString(ary));
 	    }
 	}
 	else {

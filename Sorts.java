@@ -19,10 +19,10 @@ public class Sorts {
     //Sort by comparing the integer with all the integers in front of it and swapping indices if they are smaller
     public static void bubbleSort(int[] data) {
 	for(int i = 0; i < data.length; i++) {
-	    //choosing the first index
-	    int current = data[i];
 	    //looping through to see if the current int is smaller than the int after it 
 	    for (int j = 0; j < data.length-i-1; j++) {
+		//changing the value comparing to the next value
+		int current = data[j];
 		//if the current int is smaller than the int after it swap places
 		if (current > data[j+1]) {
 		    int greater  = current;
@@ -30,7 +30,6 @@ public class Sorts {
 		    data[j+1] = greater;
 		}
 		//then check the next value
-		current = data[j+1];
 	    }
 	}
     }

@@ -21,15 +21,14 @@ public class Sorts {
 	for(int i = 0; i < data.length; i++) {
 	    //looping through to see if the current int is smaller than the int after it 
 	    for (int j = 0; j < data.length-i-1; j++) {
-		//changing the value comparing to the next value
+		//choosing the value at the next index
 		int current = data[j];
-		//if the current int is smaller than the int after it swap places
+		//if the current int is smaller than the int after, it swap places
 		if (current > data[j+1]) {
 		    int greater  = current;
 		    data[j] = data[j+1];
 		    data[j+1] = greater;
 		}
-		//then check the next value
 	    }
 	}
     }

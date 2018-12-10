@@ -38,4 +38,17 @@ public class Sorts {
 	    }
 	}
     }
+    public static void insertionSort(int[] data) {
+	for(int i = 0; i < data.length; i++) {
+	    int current = data[i];
+	    boolean isSmaller = true;
+	    int index = 0;
+	    for (int j = i-1; j > 0; j--) {
+		if (current > data[j]) {
+		    isSmaller = false;
+		}
+		
+	    }
+	    
+		
 }

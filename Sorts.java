@@ -43,8 +43,6 @@ public class Sorts {
 	for(int i = 0; i < data.length; i++) {
 	    //choosing the int to move
 	    int current = data[i];
-	    //choosing the index to insert
-	    int index = i;
 	    for (int j = i-1; j >= 0; j--) {
 		//finding the index to insert 
 		if (current >= data[j]) {

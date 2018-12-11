@@ -38,17 +38,33 @@ public class Sorts {
 	    }
 	}
     }
+    //Sort by moving the next integer to its correct position in the "sorted array" part of the array
     public static void insertionSort(int[] data) {
 	for(int i = 0; i < data.length; i++) {
+	    //choosing the int to move
 	    int current = data[i];
-	    boolean isSmaller = true;
-	    int index = 0;
-	    for (int j = i-1; j > 0; j--) {
-		if (current > data[j]) {
-		    isSmaller = false;
+	    //choosing the index to insert
+	    int index = i;
+	    for (int j = i-1; j >= 0; j--) {
+		//finding the index to insert 
+		if (current >= data[j]) {
+		    //insert the value at the found index
+		    data[j+1] = current; 
+		    //cut off the loop early if the index to insert is found in order to prevent shifting the beginning elements
+		    j = -1;
 		}
-		
+		//if the index is 0 but the value is still smaller
+		else if (j == 0 && current < data[j]) {
+		    data[j] = current;
+		}
+		//if it isn't at the index to insert yet, the end value moves over by one
+		else {
+		    data[j+1] = data[j];
+		}
 	    }
-	    
-		
+	}
+    }	    		
 }
+
+
+

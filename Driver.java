@@ -7,9 +7,11 @@ public class Driver {
 	    for (int j = 0; j < ary.length; j++) {
 		    ary[j] = num.nextInt()%10;
 	    }
-	    //System.out.println(Arrays.toString(ary));
-	    Sorts.selectionSort(ary);
-	    // System.out.println(Arrays.toString(ary));
+	    System.out.println(Arrays.toString(ary));
+	    //Sorts.selectionSort(ary);
+	    //Sorts.bubbleSort(ary);
+	    Sorts.insertionSort(ary);
+	    System.out.println(Arrays.toString(ary));
 	}
 	else {
 	    System.out.println("input the length of the array");

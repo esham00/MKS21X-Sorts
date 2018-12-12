@@ -45,20 +45,13 @@ public class Sorts {
 	    int current = data[i];
 	    int j = i-1;
 	    //loop through the sorted part of the array 
-	    while (current < data[j] && j > 0) {
+	    while (j >= 0 && current < data[j]) {
 		//shifting the sorted part of the array by one
 		data[j+1] = data[j];
 		j--;
 	    }
-	    //if the current value belongs at the start of the sorted array, must run the loop one more time and set the index zero to current
-	    if (data[0] > current) {
-		data[j+1] = data[j];
-		data[0] = current;
-	    }
-	    //inserting the current value at j+1 bc data[j] < current, so the correct insertion is j+1
-	    else {
-		data[j+1] = current;
-	    }
+	    //inserting the current value at j+1 bc data[j] < current, so the correct insertion is j + 1
+	    data[j+1] = current;
 	}
     }
 }

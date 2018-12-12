@@ -44,7 +44,9 @@ public class Sorts {
 	    //choosing the int to move
 	    int current = data[i];
 	    int j = i-1;
-	    //loop through the sorted part of the array 
+	    //loop through the sorted part of the array
+	    //put j >= 0 first so that an array exception wouldn't occur when j = -1, it would just exit the while loop
+	    //doing so would shorten following steps and reduce runtime
 	    while (j >= 0 && current < data[j]) {
 		//shifting the sorted part of the array by one
 		data[j+1] = data[j];

@@ -43,43 +43,26 @@ public class Sorts {
 	for(int i = 1; i < data.length; i++) {
 	    //choosing the int to move
 	    int current = data[i];
-	    boolean isSmaller = true;
 	    int j = i-1;
 	    //loop through the sorted part of the array 
-	    while (isSmaller) {
+	    while (current < data[j] && j > 0) {
 		//shifting the sorted part of the array by one
 		data[j+1] = data[j];
-		//if the current value is more than the previous value then insert the value and end the loop
-		if (current >= data[j]) {
-		    data[j+1] = current;
-		    isSmaller = false;
-		}
-		//if the current value is smaller than all the values in the arry, then insert at index 0
-		if (j == 0) {
-		    data[j] = current;
-		    isSmaller = false;
-		}
 		j--;
 	    }
-	    // for (int j = i-1; j >= 0; j--) {
-	    // 	//finding the index to insert 
-	    // 	if (current >= data[j]) {
-	    // 	    //insert the value at the found index
-	    // 	    data[j+1] = current; 
-	    // 	    //cut off the loop early if the index to insert is found in order to prevent shifting the beginning elements
-	    // 	    j = -1;
-	    // 	}
-	    // 	//if the index is 0 but the value is still smaller
-	    // 	else if (j == 0 && current < data[j]) {
-	    // 	    data[j] = current;
-	    // 	}
-	    // 	//if it isn't at the index to insert yet, the end value moves over by one
-	    // 	else {
-	    // 	    data[j+1] = data[j];
-	    // 	}
+	    //if the current value belongs at the start of the sorted array, must run the loop one more time and set the index zero to current
+	    if (data[0] > current) {
+		data[j+1] = data[j];
+		data[0] = current;
+	    }
+	    //inserting the current value at j+1 bc data[j] < current, so the correct insertion is j+1
+	    else {
+		data[j+1] = current;
+	    }
 	}
     }
-}	    		
+}
+	    		
 
 
 
